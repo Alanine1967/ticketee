@@ -38,6 +38,8 @@ gem 'jbuilder', '~> 1.0.1'
 # gem 'debugger'
 group :test, :development do
 	gem 'rspec-rails', "~> 2.12"
+	gem "guard-rspec"
+	gem 'rb-fsevent', '~> 0.9'
 end
 
 group :test do
