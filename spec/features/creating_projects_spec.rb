@@ -4,7 +4,7 @@ feature 'Creating Projects' do
 	before do
 		sign_in_as!(FactoryGirl.create(:admin_user))
 		visit '/'
-		click_link 'New Project'
+		first(:link, 'New Project').click
 	end
 
 	scenario 'can create a project' do

@@ -8,8 +8,8 @@ feature "Editing projects" do
 	before do
 		FactoryGirl.create(:project, name: "TextMate 2")
 		visit "/"
-		click_link "TextMate 2"
-		click_link "Edit Project"
+		first(:link, "TextMate 2").click
+		first(:link, "Edit Project").click
 	end
 
 	scenario "Updating a project" do
@@ -17,7 +17,7 @@ feature "Editing projects" do
 		click_button "Update Project"
 		page.should have_content("Project has been updated.")
 	end
-	
+
 	scenario "Updating a project with invalid attributes is bad" do
 		fill_in "Name", with: ""
 		click_button "Update Project"
